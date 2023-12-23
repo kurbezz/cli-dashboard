@@ -1,8 +1,5 @@
 name: CD # Continuous Deployment
 
-permissions:
-  contents: write
-
 on:
   push:
     tags:
@@ -128,6 +125,8 @@ jobs:
           fi
       - name: Releasing assets
         uses: softprops/action-gh-release@v1
+        permissions:
+          contents: write
         with:
           files: |
 
